@@ -1,0 +1,11 @@
+bookdown::epub_book: default
+bookdown::gitbook:
+  css: style.css
+  split_by: "rmd"
+  # split_by: none
+  config:
+    toc:
+      before: |
+        <li><a href="./">book title.</a></li>
+      after: |
+        <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
