@@ -32,7 +32,7 @@
   
   
 
-<link rel="next" href="huu.html">
+
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -129,10 +129,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">book title.</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> はじめに</a><ul>
-<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#multiply"><i class="fa fa-check"></i><b>1.1</b> Multiply</a></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="#section"><i class="fa fa-check"></i><b>1</b> はじめに</a></li>
+<li class="chapter" data-level="2" data-path="index.html"><a href="#elementary"><i class="fa fa-check"></i><b>2</b> Elementary</a><ul>
+<li class="chapter" data-level="2.1" data-path="index.html"><a href="#multiply"><i class="fa fa-check"></i><b>2.1</b> Multiply</a></li>
+<li class="chapter" data-level="2.2" data-path="index.html"><a href="#say-hi"><i class="fa fa-check"></i><b>2.2</b> Say Hi</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="huu.html"><a href="huu.html"><i class="fa fa-check"></i><b>2</b> CheckIOコンプリート</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -156,37 +157,43 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="header">
 <h1 class="title">Untitled</h1>
 <p class="author"><em>reinakajima</em></p>
-<p class="date"><em>2019年4月16日</em></p>
 </div>
 <div id="section" class="section level1">
 <h1><span class="header-section-number">1</span> はじめに</h1>
+<p><a href="https://py.checkio.org/">CheckiO.org</a>を解く．<br />
+当面はElementaryの問題を解く際のヒント，考え方を整理することとして，実装例は基本的に掲載しない．<br />
+いま，Bigger Priceまで解き終えている（2019年4月28日時点）ので暇なときに記事は更新する．</p>
+</div>
+<div id="elementary" class="section level1">
+<h1><span class="header-section-number">2</span> Elementary</h1>
 <div id="multiply" class="section level2">
-<h2><span class="header-section-number">1.1</span> Multiply</h2>
-<p>rだけで完結！ と思ったけど，どう考えてもエディタは別のやつにして，その書いたスクリプトをこっちに持ってきて，といようなほうがよさそう．</p>
-<p>ゆあっていき</p>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> left_join(phrases):
-    <span class="co">&quot;&quot;&quot;</span>
-<span class="co">        Join strings and replace &quot;right&quot; to &quot;left&quot; 3</span>
-<span class="co">    &quot;&quot;&quot;</span>
-    
-    l <span class="op">=</span> [s.replace(<span class="st">&#39;right&#39;</span>, <span class="st">&#39;left&#39;</span>) <span class="cf">for</span> s <span class="kw">in</span> phrases]
-    ans <span class="op">=</span> <span class="st">&#39;,&#39;</span>.join(l)
-    
-    <span class="cf">return</span> ans
-
-<span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&#39;__main__&#39;</span>:
-    <span class="bu">print</span>(<span class="st">&#39;Example:&#39;</span>)
-    <span class="bu">print</span>(left_join((<span class="st">&quot;left&quot;</span>, <span class="st">&quot;right&quot;</span>, <span class="st">&quot;left&quot;</span>, <span class="st">&quot;stop&quot;</span>)))
-    
-    <span class="co">#These &quot;asserts&quot; using only for self-checking and not necessary for auto-testing</span>
-    <span class="cf">assert</span> left_join((<span class="st">&quot;left&quot;</span>, <span class="st">&quot;right&quot;</span>, <span class="st">&quot;left&quot;</span>, <span class="st">&quot;stop&quot;</span>)) <span class="op">==</span> <span class="st">&quot;left,left,left,stop&quot;</span>, <span class="st">&quot;All to left&quot;</span>
-    <span class="cf">assert</span> left_join((<span class="st">&quot;bright aright&quot;</span>, <span class="st">&quot;ok&quot;</span>)) <span class="op">==</span> <span class="st">&quot;bleft aleft,ok&quot;</span>, <span class="st">&quot;Bright Left&quot;</span>
-    <span class="cf">assert</span> left_join((<span class="st">&quot;brightness wright&quot;</span>,)) <span class="op">==</span> <span class="st">&quot;bleftness wleft&quot;</span>, <span class="st">&quot;One phrase&quot;</span>
-    <span class="cf">assert</span> left_join((<span class="st">&quot;enough&quot;</span>, <span class="st">&quot;jokes&quot;</span>)) <span class="op">==</span> <span class="st">&quot;enough,jokes&quot;</span>, <span class="st">&quot;Nothing to replace&quot;</span>
-    <span class="bu">print</span>(<span class="st">&quot;Coding complete? Click &#39;Check&#39; to review your tests and earn cool rewards!&quot;</span>)</code></pre>
-<pre><code>## Example:
-## left,left,left,stop
-## Coding complete? Click &#39;Check&#39; to review your tests and earn cool rewards!</code></pre>
+<h2><span class="header-section-number">2.1</span> Multiply</h2>
+<p>必要な操作</p>
+<ul>
+<li>四則演算：乗算</li>
+</ul>
+<p>実装例は下のとおり．
+個人的な好みとして，<code>return</code>用の変数―ここでは<code>ans</code>―をつくっておいて<code>return</code>のときにはその変数を書くだけにしている．</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> mult_two(a, b):
+    <span class="co"># your code here</span>
+    ans <span class="op">=</span> a <span class="op">*</span> b
+    <span class="cf">return</span> ans</code></pre>
+<p>Tips:そのほかの四則演算用の記号</p>
+<ul>
+<li><code>+</code>，<code>-</code>，<code>/</code>など</li>
+<li><code>%</code>：割ったときの余り
+<ul>
+<li>使用例：<code>print("3 わる 2 の余りは", 3 % 2) # 3 わる 2 の余りは 1</code></li>
+</ul></li>
+</ul>
+</div>
+<div id="say-hi" class="section level2">
+<h2><span class="header-section-number">2.2</span> Say Hi</h2>
+<p>必要な操作</p>
+<ul>
+<li>文字列の結合</li>
+<li>型変換（数値型から文字列型）</li>
+</ul>
 
 </div>
 </div>
@@ -196,7 +203,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
         </div>
       </div>
 
-<a href="huu.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

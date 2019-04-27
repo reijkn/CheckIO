@@ -1,2 +1,2 @@
-chapter_name: "ch: "          # この場合 ch: 1 と自動で振られる
+#chapter_name: ": "          # この場合 ch: 1 と自動で振られる
 output_dir: "docs"            # 出力先の指定(デフォは"_book")

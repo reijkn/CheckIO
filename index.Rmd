@@ -1,42 +1,36 @@
 ---
-site: bookdown::bookdown_site
-output:
-  bookdown::pdf_book:
-    latex_engine: xelatex
-    pandoc_args: --top-level-division=chapter
-documentclass: bxjsbook
-classoption: xelatex,ja=standard, landscape
-geometry: no
-papersize: b5
+title: "Untitled"
+author: "reinakajima"
 ---
-# null
+# はじめに
+[CheckiO.org](https://py.checkio.org/)を解く．  
+当面はElementaryの問題を解く際のヒント，考え方を整理することとして，実装例は基本的に掲載しない．  
+いま，Bigger Priceまで解き終えている（2019年4月28日時点）ので暇なときに記事は更新する．
 
-## どれでしたっけ・・・
+# Elementary
 
-rだけで完結！ と思ったけど，どう考えてもエディタは別のやつにして，その書いたスクリプトをこっちに持ってきて，といようなほうがよさそう．
+## Multiply
+必要な操作
 
-ゆあっていき
+ - 四則演算：乗算
+
+実装例は下のとおり．
+個人的な好みとして，`return`用の変数―ここでは`ans`―をつくっておいて`return`のときにはその変数を書くだけにしている．
 ```{python, engine.path ="C:/Users/ierayolocal/anaconda3/python.exe", python.reticulate = FALSE}
-def left_join(phrases):
-    """
-        Join strings and replace "right" to "left" 3
-    """
-    
-    l = [s.replace('right', 'left') for s in phrases]
-    ans = ','.join(l)
-    
+def mult_two(a, b):
+    # your code here
+    ans = a * b
     return ans
-
-if __name__ == '__main__':
-    print('Example:')
-    print(left_join(("left", "right", "left", "stop")))
-    
-    #These "asserts" using only for self-checking and not necessary for auto-testing
-    assert left_join(("left", "right", "left", "stop")) == "left,left,left,stop", "All to left"
-    assert left_join(("bright aright", "ok")) == "bleft aleft,ok", "Bright Left"
-    assert left_join(("brightness wright",)) == "bleftness wleft", "One phrase"
-    assert left_join(("enough", "jokes")) == "enough,jokes", "Nothing to replace"
-    print("Coding complete? Click 'Check' to review your tests and earn cool rewards!")
-
-
 ```
+
+Tips:そのほかの四則演算用の記号
+
+ - `+`，`-`，`/`など
+ - `%`：割ったときの余り
+   - 使用例：`print("3 わる 2 の余りは", 3 % 2) # 3 わる 2 の余りは 1`
+
+## Say Hi
+必要な操作
+
+ - 文字列の結合
+ - 型変換（数値型から文字列型）
